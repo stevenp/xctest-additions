@@ -8,7 +8,7 @@ XCTest-capable drop-in replacements for [GHUnit](https://github.com/gabriel/gh-u
 Drag the files `XCTAsyncTestCase.h` and `XCTAsyncTestCase.m` into your project and add them to your iOS tests target.
 
 
-Example:
+Example test on blocks usage, TestAsync.m:
 ```
 @interface TestAsync : XCTAsyncTestCase
 
