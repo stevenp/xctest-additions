@@ -6,11 +6,11 @@ Feel free to use, copy and modify this code as you wish, maintaining and respect
 XCTAsyncTestCase
 ---------------
 XCTest-capable drop-in replacements for [GHUnit](https://github.com/gabriel/gh-unit/)'s class for writing asynchronous tests, `GHAsyncUnitTestCase`.
+This class will let you test asynchronous behavior using regular XCTest targets so they can be ran easily from Xcode or Xcode Server.
 
-Drag the files `XCTAsyncTestCase.h` and `XCTAsyncTestCase.m` into your project and add them to your iOS tests target.
+Drag the files `XCTAsyncTestCase.h` and `XCTAsyncTestCase.m` into your project and add them to your iOS tests target. 
 
-
-Example test on blocks usage, `TestAsync.m`:
+Example test case on blocks usage, `TestAsync.m`:
 ```
 @interface TestAsync : XCTAsyncTestCase
 
