@@ -1,20 +1,18 @@
-xctest-additions
-=============
+//
+//  TestAsync.m
+//
+//  Created by Bakken, Sveinung on 10/21/13.
+//  Copyright (c) 2013 Clear Channel. All rights reserved.
+//
 
-XCTAsyncTestCase
----------------
-XCTest-capable drop-in replacements for [GHUnit](https://github.com/gabriel/gh-unit/)'s class for writing asynchronous tests, `GHAsyncUnitTestCase`.
+#import "XCTAsyncTestCase.h"
 
-Drag the files `XCTAsyncTestCase.h` and `XCTAsyncTestCase.m` into your project and add them to your iOS tests target.
-
-
-Example:
-```
 @interface TestAsync : XCTAsyncTestCase
 
 @end
 
 @implementation TestAsync
+
 - (void)testBlockSample
 {
     [self prepare];
@@ -30,4 +28,17 @@ Example:
     //    kXCTUnitWaitStatusCancelled,  indicates the operation was cancelled
     [self waitForStatus:kXCTUnitWaitStatusSuccess timeout:2.0];
 }
-```
+
+- (void)testPerformSelector
+{
+    [self prepare];
+    [self performSelector:@selector(markAsCancelled) withObject:nil afterDelay:2.0];
+    [self waitForStatus:kXCTUnitWaitStatusCancelled timeout:3.0];
+}
+
+- (void)markAsCancelled
+{
+    [self notify:kXCTUnitWaitStatusCancelled];
+}
+
+@end
