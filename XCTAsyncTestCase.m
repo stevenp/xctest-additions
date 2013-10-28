@@ -88,7 +88,7 @@ typedef enum {
     NSTimeInterval checkEveryInterval = 0.05;
     NSDate *runUntilDate = [NSDate dateWithTimeIntervalSinceNow:timeout];
     BOOL timedOut = NO;
-    NSInteger runIndex = 0;
+    NSUInteger runIndex = 0;
     while(notifiedStatus_ == kXCTUnitWaitStatusUnknown) {
         NSString *mode = [_runLoopModes objectAtIndex:(runIndex++ % [_runLoopModes count])];
         
@@ -148,7 +148,7 @@ typedef enum {
 	if (!_runLoopModes)
 		_runLoopModes = [NSArray arrayWithObjects:NSDefaultRunLoopMode, NSRunLoopCommonModes, nil];
     
-	NSInteger runIndex = 0;
+	NSUInteger runIndex = 0;
     
 	while ([runUntilDate compare:[NSDate dateWithTimeIntervalSinceNow:0]] == NSOrderedDescending) {
 		NSString *mode = [_runLoopModes objectAtIndex:(runIndex++ % [_runLoopModes count])];
