@@ -34,7 +34,7 @@ Example test case on blocks usage, `TestAsync.m`:
 }
 ```
 
-xtesitfy.sh
+xtestify.sh
 ----------
 Script to automatically convert any old GHUnit test classes to Apple's new XCTests.
 Will search for GHUnit's assertions and class names and replace them with the corresponding XCTest substitutions.
